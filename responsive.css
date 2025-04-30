@@ -1,0 +1,219 @@
+/* Responsive styles */
+
+/* Default styles for desktop */
+/* Most styles are in their respective component CSS files */
+
+/* Large desktop */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+  
+  .hero-content h1 {
+    font-size: 4rem;
+  }
+  
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+}
+
+/* Regular desktop */
+@media (max-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+  
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+  
+  .projects-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}
+
+/* Small desktop / Tablet landscape */
+@media (max-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.75rem;
+  }
+  
+  .section-title {
+    font-size: 1.75rem;
+  }
+  
+  /* Modified layout for about and contact sections */
+  .about-content,
+  .contact-content {
+    flex-direction: column;
+  }
+  
+  .skills-categories {
+    gap: var(--space-3);
+  }
+  
+  .project-card {
+    max-width: 450px;
+    margin: 0 auto;
+  }
+}
+
+/* Tablet portrait */
+@media (max-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+  
+  .hero {
+    padding-top: 70px;
+  }
+  
+  .hero .container {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .hero-content {
+    max-width: 100%;
+    margin-bottom: var(--space-4);
+  }
+  
+  .hero-cta {
+    justify-content: center;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-content h2 {
+    font-size: 1.5rem;
+  }
+  
+  .profile-container {
+    width: 220px;
+    height: 220px;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  /* Stack elements */
+  .skills-categories {
+    flex-direction: column;
+  }
+  
+  .skill-category {
+    max-width: 100%;
+  }
+  
+  .timeline-item {
+    padding-left: 50px;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+  
+  .footer-social {
+    justify-content: center;
+  }
+}
+
+/* Large mobile */
+@media (max-width: 576px) {
+  .container {
+    width: 100%;
+    padding: 0 var(--space-2);
+  }
+  
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-content h2 {
+    font-size: 1.25rem;
+  }
+  
+  .hero-cta {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+  
+  .hero-cta .btn {
+    width: 100%;
+  }
+  
+  .profile-container {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .section-title {
+    font-size: 1.35rem;
+  }
+  
+  .about-stats {
+    flex-direction: column;
+  }
+  
+  .timeline-item {
+    padding-left: 40px;
+  }
+  
+  .timeline-content {
+    padding: var(--space-2);
+  }
+  
+  .project-links {
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+  
+  .project-links .btn {
+    width: 100%;
+  }
+  
+  .contact-form button {
+    width: 100%;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 375px) {
+  .hero-content h1 {
+    font-size: 1.75rem;
+  }
+  
+  .hero-content h2 {
+    font-size: 1.1rem;
+  }
+  
+  .profile-container {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .section-title {
+    font-size: 1.25rem;
+  }
+  
+  .contact-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}

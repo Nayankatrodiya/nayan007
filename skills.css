@@ -1,0 +1,93 @@
+/* Skills section styles */
+
+.skills {
+  background-color: white;
+}
+
+.skills-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.skill-category {
+  flex: 1;
+  min-width: 300px;
+}
+
+.skill-category h3 {
+  margin-bottom: var(--space-3);
+  font-size: 1.25rem;
+  color: var(--color-gray-800);
+  border-bottom: 1px solid var(--color-gray-200);
+  padding-bottom: var(--space-1);
+}
+
+.skills-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.skill-item {
+  background-color: var(--color-gray-50);
+  padding: var(--space-2);
+  border-radius: var(--border-radius-md);
+  transition: transform var(--transition-fast);
+}
+
+.skill-item:hover {
+  transform: translateX(5px);
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--space-1);
+}
+
+.skill-name {
+  font-weight: 500;
+  color: var(--color-gray-800);
+}
+
+.skill-percentage {
+  font-weight: 500;
+  color: var(--color-primary);
+}
+
+.skill-bar {
+  height: 8px;
+  background-color: var(--color-gray-200);
+  border-radius: var(--border-radius-full);
+  overflow: hidden;
+}
+
+.skill-progress {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+  border-radius: var(--border-radius-full);
+  width: 0;
+  transition: width 1s ease-in-out;
+}
+
+/* This would normally be handled with JavaScript, but we're using CSS for the animation */
+.skill-item:hover .skill-progress {
+  animation: fillBar 1s forwards;
+}
+
+@keyframes fillBar {
+  from {
+    width: 0;
+  }
+  to {
+    width: attr(data-percentage);
+  }
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+  .skill-category {
+    min-width: 100%;
+  }
+}

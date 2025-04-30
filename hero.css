@@ -1,0 +1,238 @@
+/* Hero section styles */
+
+.hero {
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  background: linear-gradient(135deg, var(--color-gray-50) 0%, var(--color-gray-100) 100%);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 30%, var(--color-primary-light) 0%, transparent 20%),
+    radial-gradient(circle at 80% 70%, var(--color-secondary-light) 0%, transparent 20%);
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.hero .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: var(--space-2);
+}
+
+.hero-content h2 {
+  font-size: 1.75rem;
+  color: var(--color-gray-600);
+  font-weight: 500;
+  margin-bottom: var(--space-3);
+}
+
+.hero-content p {
+  font-size: 1.125rem;
+  margin-bottom: var(--space-4);
+  color: var(--color-gray-700);
+}
+
+.hero-cta {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.profile-circle {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--border-radius-full);
+  background-color: var(--color-gray-300);
+  background-image: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-secondary-light) 100%);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+/* You would normally have an actual image here */
+.profile-circle::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: var(--border-radius-full);
+  background-image: url(SMIT5251.jpg);
+  background-size: cover;
+  background-position: center;
+  box-shadow: var(--shadow-md);
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: var(--space-3);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+  opacity: 0.7;
+}
+
+.mouse {
+  width: 30px;
+  height: 50px;
+  border: 2px solid var(--color-gray-700);
+  border-radius: 20px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--space-1);
+}
+
+.wheel {
+  width: 4px;
+  height: 8px;
+  background-color: var(--color-gray-700);
+  border-radius: var(--border-radius-full);
+  margin-top: var(--space-1);
+  animation: mouseScroll 1.5s infinite;
+}
+
+.arrow-down {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: arrowDown 1.5s infinite;
+}
+
+.arrow-down span {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-bottom: 2px solid var(--color-gray-700);
+  border-right: 2px solid var(--color-gray-700);
+  transform: rotate(45deg);
+  margin: -5px;
+}
+
+@keyframes mouseScroll {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+@keyframes arrowDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+/* Media queries */
+@media (max-width: 992px) {
+  .hero .container {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .hero-content {
+    max-width: 100%;
+    margin-bottom: var(--space-4);
+  }
+  
+  .hero-cta {
+    justify-content: center;
+  }
+  
+  .profile-container {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 70px;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-content h2 {
+    font-size: 1.5rem;
+  }
+  
+  .profile-container {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-content h2 {
+    font-size: 1.25rem;
+  }
+  
+  .hero-cta {
+    flex-direction: column;
+  }
+  
+  .profile-container {
+    width: 180px;
+    height: 180px;
+  }
+}

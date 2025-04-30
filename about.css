@@ -1,0 +1,131 @@
+/* About section styles */
+
+.about {
+  background-color: var(--color-gray-50);
+}
+
+.about-content {
+  display: flex;
+  gap: var(--space-5);
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text p {
+  margin-bottom: var(--space-3);
+  font-size: 1.05rem;
+  color: var(--color-gray-700);
+}
+
+.about-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.stat {
+  flex: 1;
+  min-width: 160px;
+  background-color: white;
+  padding: var(--space-3);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.stat:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.stat h3 {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-1);
+  color: var(--color-primary);
+}
+
+.stat p {
+  margin-bottom: 0;
+  color: var(--color-gray-700);
+}
+
+.about-timeline {
+  flex: 1;
+  position: relative;
+}
+
+.about-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 20px;
+  width: 2px;
+  background-color: var(--color-gray-300);
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 60px;
+  margin-bottom: var(--space-4);
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 15px;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  border-radius: var(--border-radius-full);
+  background-color: var(--color-primary);
+  border: 2px solid white;
+  z-index: 1;
+}
+
+.timeline-content {
+  background-color: white;
+  padding: var(--space-3);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+}
+
+.timeline-content:hover {
+  transform: translateX(5px);
+  box-shadow: var(--shadow-md);
+}
+
+.timeline-content h3 {
+  font-size: 1.1rem;
+  color: var(--color-primary);
+  margin-bottom: var(--space-1);
+}
+
+.timeline-content p {
+  margin-bottom: 0;
+  color: var(--color-gray-700);
+}
+
+/* Media queries */
+@media (max-width: 992px) {
+  .about-content {
+    flex-direction: column;
+  }
+  
+  .about-text {
+    margin-bottom: var(--space-4);
+  }
+}
+
+@media (max-width: 576px) {
+  .about-stats {
+    flex-direction: column;
+  }
+  
+  .stat {
+    min-width: 100%;
+  }
+}
